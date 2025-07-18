@@ -1,0 +1,6 @@
+# ninja log v6
+7	1081	1752802982613751800	CMakeFiles/main.cpp.dir/main.cpp.o	2111923659c2118d
+7	1499	1752818644837265840	CMakeFiles/main.cpp.dir/职工管理系统.cpp.o	709af1b1cf1703f7
+1	916	1752818806273218334	CMakeFiles/WorkerManageSystem.dir/WorkerManageSystem.cpp.o	ee7f8d97afe1f5c3
+2	774	1752818888607466928	CMakeFiles/WorkerManageSystem.dir/WorkerManager.cpp.o	f257d8b1c7d833b2
+774	879	1752818889379692083	WorkerManageSystem	154cc86b3b273ab9
