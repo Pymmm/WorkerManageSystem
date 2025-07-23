@@ -1,7 +1,14 @@
 #include <iostream>
 #include "workerManager.h"
+#include "Worker.h"
+#include "Employee.h"
 
 int main() {
+    // // 测试代码
+    // Worker * worker = nullptr;
+    // worker = new Employee(1, "张三", 1);
+    // worker->showInfo();
+
     // 实例化管理者对象
     WorkerManager wm;
 

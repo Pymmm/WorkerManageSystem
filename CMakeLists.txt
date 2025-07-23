@@ -5,5 +5,6 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(WorkerManageSystem
         WorkerManageSystem.cpp
-        WorkerManager.cpp
+        workerManager.cpp
+        Employee.cpp
 )

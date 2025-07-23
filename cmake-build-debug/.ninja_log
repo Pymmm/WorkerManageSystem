@@ -1,14 +1,13 @@
 # ninja log v6
+1	184	1753255438501198544	build.ninja	c9b4e40446e31d75
+1024	1118	1753249955602994376	WorkerManageSystem	e6e4434e7bd67018
+0	1262	1753242712122593845	CMakeFiles/WorkerManageSystem.dir/src/workerManager.cpp.o	cc2c1e1714c77f95
 7	1081	1752802982613751800	CMakeFiles/main.cpp.dir/main.cpp.o	2111923659c2118d
 7	1499	1752818644837265840	CMakeFiles/main.cpp.dir/职工管理系统.cpp.o	709af1b1cf1703f7
-1	916	1752818806273218334	CMakeFiles/WorkerManageSystem.dir/WorkerManageSystem.cpp.o	ee7f8d97afe1f5c3
-2	774	1752818888607466928	CMakeFiles/WorkerManageSystem.dir/WorkerManager.cpp.o	f257d8b1c7d833b2
-774	879	1752818889379692083	WorkerManageSystem	154cc86b3b273ab9
-27	1420	1753233987736444148	CMakeFiles/WorkerManageSystem.dir/WorkerManageSystem.cpp.o	ee7f8d97afe1f5c3
-29	1421	1753233987738282275	CMakeFiles/WorkerManageSystem.dir/WorkerManager.cpp.o	f257d8b1c7d833b2
-1421	1557	1753233989129866197	WorkerManageSystem	154cc86b3b273ab9
-5	1288	1753234207759751301	CMakeFiles/WorkerManageSystem.dir/WorkerManager.cpp.o	f257d8b1c7d833b2
-4	1289	1753234207759359228	CMakeFiles/WorkerManageSystem.dir/WorkerManageSystem.cpp.o	ee7f8d97afe1f5c3
-1289	1384	1753234209043695118	WorkerManageSystem	154cc86b3b273ab9
-6	648	1753234231739388258	CMakeFiles/WorkerManageSystem.dir/WorkerManageSystem.cpp.o	ee7f8d97afe1f5c3
-648	720	1753234232381286049	WorkerManageSystem	154cc86b3b273ab9
+2	599	1753242718145942772	CMakeFiles/WorkerManageSystem.dir/WorkerManageSystem.cpp.o	52f1e58c0897d85d
+6	1074	1753241181176548661	CMakeFiles/WorkerManageSystem.dir/WorkerManager.cpp.o	f257d8b1c7d833b2
+21	1186	1753255488736793479	CMakeFiles/WorkerManageSystem.dir/workerManager.cpp.o	999d75c4c92ed44b
+3	608	1753255506705464850	CMakeFiles/WorkerManageSystem.dir/WorkerManageSystem.cpp.o	ee7f8d97afe1f5c3
+6	1024	1753255679890663839	CMakeFiles/WorkerManageSystem.dir/Employee.cpp.o	860e2da093b63a0e
+4	670	1753255707389564142	CMakeFiles/WorkerManageSystem.dir/WorkerManageSystem.cpp.o	ee7f8d97afe1f5c3
+670	788	1753255708055564357	WorkerManageSystem	9d086ddbf7b211ee
