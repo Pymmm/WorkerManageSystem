@@ -12,26 +12,28 @@ int main() {
         wm.Show_Menu();
 
         std::cout << "请选择你的操作：" << std::endl;
-        std::cin >> choice;;
+        std::cin >> choice; // 接受用户的选项
 
         switch (choice) {
-            case 0:
+            case 0: // 退出系统
+                wm.ExitSystem();
                 break;
-            case 1:
+            case 1: // 添加职工
                 break;
-            case 2:
+            case 2: // 显示职工
                 break;
-            case 3:
+            case 3: // 删除职工
                 break;
-            case 4:
+            case 4: // 修改职工
                 break;
-            case 5:
+            case 5: // 查找职工
                 break;
-            case 6:
+            case 6: // 排序职工
                 break;
-            case 7:
+            case 7: // 清空文件
                 break;
             default:
+                system("clear"); // 清屏
                 break;
         }
     }

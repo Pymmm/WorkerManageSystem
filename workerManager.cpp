@@ -5,11 +5,10 @@
 #include "workerManager.h"
 
 WorkerManager::WorkerManager() {
-
 }
 
 // 展示菜单
-void WorkerManager::Show_Menu(){
+void WorkerManager::Show_Menu() {
     std::cout << "*********************************" << std::endl;
     std::cout << "******* 欢迎使用职工管理系统 *******" << std::endl;
     std::cout << "********* 0.退出管理程序 **********" << std::endl;
@@ -24,7 +23,13 @@ void WorkerManager::Show_Menu(){
     std::cout << std::endl;
 }
 
+// 退出系统
+void WorkerManager::ExitSystem() {
+    std::cout << "欢迎下次使用" << std::endl;
+    system("pause");
+    exit(0); // 退出程序
+}
+
 //析构函数
 WorkerManager::~WorkerManager() {
-
 }
