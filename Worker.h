@@ -16,6 +16,8 @@ public:
     // 获取岗位名称
     virtual std::string getDeptName() = 0;
 
+    virtual ~Worker() = default; // 不加会报错
+
     // 职工编号
     int m_Id;
 

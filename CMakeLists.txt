@@ -7,4 +7,6 @@ add_executable(WorkerManageSystem
         WorkerManageSystem.cpp
         workerManager.cpp
         Employee.cpp
+        Manager.cpp
+        Boss.cpp
 )

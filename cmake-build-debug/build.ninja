@@ -67,6 +67,18 @@ build CMakeFiles/WorkerManageSystem.dir/Employee.cpp.o: CXX_COMPILER__WorkerMana
   OBJECT_DIR = CMakeFiles/WorkerManageSystem.dir
   OBJECT_FILE_DIR = CMakeFiles/WorkerManageSystem.dir
 
+build CMakeFiles/WorkerManageSystem.dir/Manager.cpp.o: CXX_COMPILER__WorkerManageSystem_unscanned_Debug /Users/jerrypu/Code/基于多态的职工管理系统/Manager.cpp || cmake_object_order_depends_target_WorkerManageSystem
+  DEP_FILE = CMakeFiles/WorkerManageSystem.dir/Manager.cpp.o.d
+  FLAGS = -g -std=gnu++2a -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/WorkerManageSystem.dir
+  OBJECT_FILE_DIR = CMakeFiles/WorkerManageSystem.dir
+
+build CMakeFiles/WorkerManageSystem.dir/Boss.cpp.o: CXX_COMPILER__WorkerManageSystem_unscanned_Debug /Users/jerrypu/Code/基于多态的职工管理系统/Boss.cpp || cmake_object_order_depends_target_WorkerManageSystem
+  DEP_FILE = CMakeFiles/WorkerManageSystem.dir/Boss.cpp.o.d
+  FLAGS = -g -std=gnu++2a -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/WorkerManageSystem.dir
+  OBJECT_FILE_DIR = CMakeFiles/WorkerManageSystem.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target WorkerManageSystem
@@ -75,7 +87,7 @@ build CMakeFiles/WorkerManageSystem.dir/Employee.cpp.o: CXX_COMPILER__WorkerMana
 #############################################
 # Link the executable WorkerManageSystem
 
-build WorkerManageSystem: CXX_EXECUTABLE_LINKER__WorkerManageSystem_Debug CMakeFiles/WorkerManageSystem.dir/WorkerManageSystem.cpp.o CMakeFiles/WorkerManageSystem.dir/workerManager.cpp.o CMakeFiles/WorkerManageSystem.dir/Employee.cpp.o
+build WorkerManageSystem: CXX_EXECUTABLE_LINKER__WorkerManageSystem_Debug CMakeFiles/WorkerManageSystem.dir/WorkerManageSystem.cpp.o CMakeFiles/WorkerManageSystem.dir/workerManager.cpp.o CMakeFiles/WorkerManageSystem.dir/Employee.cpp.o CMakeFiles/WorkerManageSystem.dir/Manager.cpp.o CMakeFiles/WorkerManageSystem.dir/Boss.cpp.o
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk
   OBJECT_DIR = CMakeFiles/WorkerManageSystem.dir
   POST_BUILD = :
