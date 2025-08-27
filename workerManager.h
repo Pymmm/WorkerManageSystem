@@ -36,6 +36,9 @@ public:
     // 保存文件
     void save();
 
+    // 判断文件是否为空 标志
+    bool m_FileIsEmpty;
+
     // 析构函数
     ~WorkerManager();
 };

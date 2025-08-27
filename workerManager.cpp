@@ -3,9 +3,18 @@
 #include "Employee.h"
 
 WorkerManager::WorkerManager() {
-    // 初始化属性
-    this->m_EmpNum = 0;
-    this->m_EmpArray = nullptr;
+    // 1、文件不存在
+    std::ifstream ifs;
+    ifs.open(FILENAME, std::ios::in); // 读文件
+    if (!ifs.is_open()) {
+        std::cout << "文件不存在" << std::endl;
+        // 初始化属性
+        this->m_EmpNum = 0; // 初始化记录人数为0
+        this->m_EmpArray = nullptr; // 初始化数组指针为空
+        this->m_FileIsEmpty = true; // 初始化文件为空
+        ifs.close();
+        return;
+    }
 }
 
 // 展示菜单
