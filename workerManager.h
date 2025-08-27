@@ -10,6 +10,9 @@
 #include "Manager.h"
 #include "Boss.h"
 
+#include <fstream>
+#define FILENAME "./empFile.txt"
+
 class WorkerManager {
 public:
     // 构造函数
@@ -29,6 +32,9 @@ public:
 
     // 添加职工
     void Add_Emp();
+
+    // 保存文件
+    void save();
 
     // 析构函数
     ~WorkerManager();

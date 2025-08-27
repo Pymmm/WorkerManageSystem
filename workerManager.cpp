@@ -85,7 +85,7 @@ void WorkerManager::Add_Emp() {
             // 将创建职工指针，保存到数组中
             newSpace[this->m_EmpNum + i] = worker;
         }
-        // 释放原来空间
+        // 释放原来空间（该对象中m_EmpArray指针指向的动态数组内存）
         delete [] this->m_EmpArray;
 
         // 更改新空间的指向
@@ -94,10 +94,11 @@ void WorkerManager::Add_Emp() {
         // 更新新的职工人数
         this->m_EmpNum = newSize;
 
-        // 成功添加后，保存到文件中（待处理）
-
         // 提示添加成功
         std::cout << "成功添加" << addNum << "名新职工" << std::endl;
+
+        // 保存数据到文件中
+        this->save();
     } else {
         std::cout << "输入数据有误" << std::endl;
     }
@@ -109,7 +110,26 @@ void WorkerManager::Add_Emp() {
     system("clear");
 }
 
+// 保存文件
+void WorkerManager::save() {
+    std::ofstream ofs;
+    ofs.open(FILENAME, std::ios::out); // 用输出的方式打开文件（写文件）
 
-//析构函数
+    // 将每个人的数据写入到文件中
+    for (int i = 0; i < this->m_EmpNum; i++) {
+        ofs << this->m_EmpArray[i]->m_Id << " "
+                << this->m_EmpArray[i]->m_Name << " "
+                << this->m_EmpArray[i]->m_DeptId << std::endl;
+    }
+
+    // 关闭文件
+    ofs.close();
+}
+
+// 析构函数
 WorkerManager::~WorkerManager() {
+    if (this->m_EmpArray != nullptr) {
+        delete [] this->m_EmpArray;
+        this->m_EmpArray = nullptr;
+    }
 }
