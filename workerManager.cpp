@@ -3,7 +3,7 @@
 #include "Employee.h"
 
 WorkerManager::WorkerManager() {
-    // 1、文件不存在
+    // 1.文件不存在
     std::ifstream ifs;
     ifs.open(FILENAME, std::ios::in); // 读文件
     if (!ifs.is_open()) {
@@ -15,6 +15,22 @@ WorkerManager::WorkerManager() {
         ifs.close();
         return;
     }
+
+    // 2.文件存在 数据为空
+    char ch;
+    ifs >> ch;
+    if (ifs.eof()) {
+        // 文件为空
+        std::cout << "文件为空" << std::endl;
+        // 初始化属性
+        this->m_EmpNum = 0; // 初始化记录人数为0
+        this->m_EmpArray = nullptr; // 初始化数组指针为空
+        this->m_FileIsEmpty = true; // 初始化文件为空
+        ifs.close();
+        return;
+    }
+
+    // 3.文件存在 数据不为空
 }
 
 // 展示菜单
@@ -102,6 +118,9 @@ void WorkerManager::Add_Emp() {
 
         // 更新新的职工人数
         this->m_EmpNum = newSize;
+
+        // 更新职工不为空的标志
+        this->m_FileIsEmpty = false;
 
         // 提示添加成功
         std::cout << "成功添加" << addNum << "名新职工" << std::endl;
