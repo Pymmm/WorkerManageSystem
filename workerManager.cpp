@@ -30,7 +30,10 @@ WorkerManager::WorkerManager() {
         return;
     }
 
-    // 3.文件存在 数据不为空
+    // 3.文件存在，并且记录数据
+    int num = this->get_EmpNum();
+    std::cout << "职工人数为：" << num << "人" << std::endl;
+    this->m_EmpNum = num;
 }
 
 // 展示菜单
@@ -152,6 +155,24 @@ void WorkerManager::save() {
 
     // 关闭文件
     ofs.close();
+}
+
+// 统计文件中人数
+int WorkerManager::get_EmpNum() {
+    std::fstream ifs;
+    ifs.open(FILENAME, std::ios::in); // 打开文件 读
+
+    int id;
+    std::string name;
+    int dId;
+
+    int num = 0;
+
+    while (ifs >> id && ifs >> name && ifs >> dId) {
+        // 统计人数变量
+        num++;
+    }
+    return num;
 }
 
 // 析构函数
