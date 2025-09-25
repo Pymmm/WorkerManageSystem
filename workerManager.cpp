@@ -7,7 +7,8 @@ WorkerManager::WorkerManager() {
     std::ifstream ifs;
     ifs.open(FILENAME, std::ios::in); // 读文件
     if (!ifs.is_open()) {
-        std::cout << "文件不存在" << std::endl;
+        // 测试代码
+        // std::cout << "文件不存在" << std::endl;
         // 初始化属性
         this->m_EmpNum = 0; // 初始化记录人数为0
         this->m_EmpArray = nullptr; // 初始化数组指针为空
@@ -20,8 +21,8 @@ WorkerManager::WorkerManager() {
     char ch;
     ifs >> ch;
     if (ifs.eof()) {
-        // 文件为空
-        std::cout << "文件为空" << std::endl;
+        // 文件为空(测试代码)
+        // std::cout << "文件为空" << std::endl;
         // 初始化属性
         this->m_EmpNum = 0; // 初始化记录人数为0
         this->m_EmpArray = nullptr; // 初始化数组指针为空
@@ -32,8 +33,21 @@ WorkerManager::WorkerManager() {
 
     // 3.文件存在，并且记录数据
     int num = this->get_EmpNum();
-    std::cout << "职工人数为：" << num << "人" << std::endl;
+    // 测试代码
+    // std::cout << "职工人数为：" << num << "人" << std::endl;
     this->m_EmpNum = num;
+
+    // 开辟空间
+    this->m_EmpArray = new Worker *[this->m_EmpNum];
+    // 将文件中的数据，存到数组中
+    this->init_Emp();
+
+    // 测试代码
+    // for (int i = 0; i < this->m_EmpNum; i++) {
+    //     std::cout << "职工编号：" << this->m_EmpArray[i]->m_Id
+    //             << " 姓名：" << this->m_EmpArray[i]->m_Name
+    //             << " 部门编号：" << this->m_EmpArray[i]->m_DeptId << std::endl;
+    // }
 }
 
 // 展示菜单
@@ -59,6 +73,7 @@ void WorkerManager::ExitSystem() {
     exit(0); // 退出程序
 }
 
+// 添加员工
 void WorkerManager::Add_Emp() {
     std::cout << "输入添加职工数量：" << std::endl;
     int addNum = 0; // 保存用户的输入数量
@@ -173,6 +188,39 @@ int WorkerManager::get_EmpNum() {
         num++;
     }
     return num;
+}
+
+// 初始化员工
+void WorkerManager::init_Emp() {
+    std::ifstream ifs;
+    ifs.open(FILENAME, std::ios::in);
+
+    int id;
+    std::string name;
+    int dId;
+
+    int index = 0;
+    while (ifs >> id && ifs >> name && ifs >> dId) {
+        Worker * worker = nullptr;
+
+        // 普通员工
+        if (dId == 1) {
+            worker = new Employee(id, name, dId);
+        }
+        // 经理
+        else if (dId == 2) {
+            worker = new Manager(id, name, dId);
+        }
+        // 老板
+        else {
+            worker = new Boss(id, name, dId);
+        }
+        this->m_EmpArray[index] = worker;
+        index++;
+    }
+
+    // 关闭文件
+    ifs.close();
 }
 
 // 析构函数
