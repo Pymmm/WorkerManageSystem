@@ -223,6 +223,23 @@ void WorkerManager::init_Emp() {
     ifs.close();
 }
 
+// 显示职工
+void WorkerManager::Show_Emp() {
+    // 判断文件是否为空
+    if (this->m_FileIsEmpty) {
+        std::cout << "文件不存在或记录为空！" << std::endl;
+    } else {
+        for (int i = 0; i < m_EmpNum; i++) {
+            // 利用多态调用程序接口
+            this->m_EmpArray[i]->showInfo();
+        }
+    }
+    // 按任意键后清屏
+    system("clear");
+    std::cout << "Press Enter to continue..." << std::endl;
+    std::cin.get();
+}
+
 // 析构函数
 WorkerManager::~WorkerManager() {
     if (this->m_EmpArray != nullptr) {
