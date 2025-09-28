@@ -149,11 +149,7 @@ void WorkerManager::Add_Emp() {
         std::cout << "输入数据有误" << std::endl;
     }
 
-    // 按任意键后 清屏回到上级目录
-    std::cout << "按任意键后,清屏回到上级目录";
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    std::cin.get();
-    system("clear");
+    Clear();
 }
 
 // 保存文件
@@ -234,14 +230,36 @@ void WorkerManager::Show_Emp() {
             this->m_EmpArray[i]->showInfo();
         }
     }
-    // 按任意键后清屏
-    system("clear");
-    std::cout << "Press Enter to continue..." << std::endl;
-    std::cin.get();
+
+    Clear();
 }
 
-// 删除员工
+// 删除职工
 void WorkerManager::Del_Emp() {
+    if (this->m_FileIsEmpty) {
+        std::cout << "文件不存在或记录为空！" << std::endl;
+    } else {
+        // 按照职工编号删除
+        std::cout << "请输入要删除的职工编号：" << std::endl;
+        int id = 0;
+        std::cin >> id;
+        int index = this->IsExist(id);
+        if (index != -1) {
+            // 说明职工存在，并且要删除掉index位置上的职工
+            for (int i = index; i < this->m_EmpNum - 1; i++) {
+                // 数据前移(覆盖)
+                this->m_EmpArray[i] = this->m_EmpArray[i + 1];
+            }
+            this->m_EmpNum--; // 更新数组中记录人员个数
+            // 数据同步更新到文件中
+            this->save();
+            std::cout << "删除成功！" << std::endl;
+        } else {
+            std::cout << "删除失败，未找到该职工" << std::endl;
+        }
+    }
+
+    Clear();
 }
 
 // 判断职工是否存在 如果存在返回职工所在数组中的位置，不存在返回-1
@@ -255,6 +273,15 @@ int WorkerManager::IsExist(int id) {
         }
     }
     return index;
+}
+
+// 按任意键清屏
+void WorkerManager::Clear() {
+    // 按任意键后 清屏回到上级目录
+    std::cout << "按任意键后,清屏回到上级目录";
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::cin.get();
+    system("clear");
 }
 
 // 析构函数
