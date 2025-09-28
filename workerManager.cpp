@@ -240,6 +240,23 @@ void WorkerManager::Show_Emp() {
     std::cin.get();
 }
 
+// 删除员工
+void WorkerManager::Del_Emp() {
+}
+
+// 判断职工是否存在 如果存在返回职工所在数组中的位置，不存在返回-1
+int WorkerManager::IsExist(int id) {
+    int index = -1;
+    for (int i = 0; i < this->get_EmpNum(); i++) {
+        if (this->m_EmpArray[i]->m_Id == id) {
+            // 找到职工
+            index = i;
+            break;
+        }
+    }
+    return index;
+}
+
 // 析构函数
 WorkerManager::~WorkerManager() {
     if (this->m_EmpArray != nullptr) {
